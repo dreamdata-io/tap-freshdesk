@@ -226,10 +226,7 @@ def do_sync():
     try:
         sync_tickets()
         sync_time_filtered("agents")
-        sync_time_filtered("roles")
-        sync_time_filtered("groups")
-        # commenting out this high-volume endpoint for now
-        #sync_time_filtered("contacts")
+        sync_time_filtered("contacts")
         sync_time_filtered("companies")
     except HTTPError as e:
         logger.critical(
